@@ -1,39 +1,22 @@
-var Discord = require('discord.io');
-var logger = require('winston');
-var auth = require('./auth.json');
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console, {
-    colorize: true
+// require the discord.js module
+const Discord = require('discord.js');
+
+// create a new Discord client
+const client = new Discord.Client();
+
+// when the client is ready, run this code
+// this event will only trigger one time after logging in
+client.once('ready', () => {
+	console.log("Ready");
 });
-logger.level = 'debug';
-// Initialize Discord Bot
-var bot = new Discord.Client({
-   token: auth.token,
-   autorun: true
+
+client.on('message', message => {
+	if (message.content === '.asuka baka') {
+		// send back "Pong." to the channel the message was sent in
+		message.channel.send('Anta Baka !');
+	}
 });
-bot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
-});
-bot.on('message', function (user, userID, channelID, message, evt) {
-    // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `.asuka`
-    if (message.substring(0, 1) == '.asuka') {
-        var args = message.substring(1).split(' ');
-        var cmd = args[0];
-       
-        args = args.splice(1);
-        switch(cmd) {
-            // !ping
-            case 'baka':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Anta baka !'
-                });
-            break;
-            // Just add any case commands if you want to..
-         }
-     }
-});
+
+// login to Discord with your app's token
+client.login("NjA1MTA4NDA2Mzk4NzQ2Njc0.Xe-lww.P167g-LLmKcW_Ihglh8OmeXFn6w");
+
