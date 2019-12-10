@@ -1,5 +1,5 @@
-//Adding token
-var auth = require('./auth.json');
+//Adding token from env variables
+require('dotenv').config()
 
 // require the discord.js module
 const Discord = require('discord.js');
@@ -21,5 +21,5 @@ client.on('message', message => {
 });
 
 // login to Discord with your app's token
-client.login(auth.token);
+client.login(process.env.BOT_TOKEN);
 

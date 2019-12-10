@@ -88,4 +88,4 @@ typings/
 .dynamodb/
 
 #Private token
-auth.json
+.env
