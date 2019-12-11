@@ -5,7 +5,8 @@
 	"main": "bot.js",
 	"author": "Gakamine",
 	"scripts": {
-		"start": "node bot.js"
+		"start": "node bot.js",
+		"build": "node bot.js"
 	},
 	"dependencies": {
 		"discord.io": "^2.5.3",
