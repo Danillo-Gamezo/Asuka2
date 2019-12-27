@@ -161,7 +161,9 @@ If you have a problem with the Zeit CLI, here's the [documentation](https://zeit
 
 ```heroku login``` and follow the instructions to connect to your Heroku account.
 
-```heroku create```
+```git init``` 
+
+```heroku git:remote -a <Heroku Appname>```
 
 ```git push heroku master```
 
