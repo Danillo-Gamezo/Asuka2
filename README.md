@@ -60,13 +60,13 @@ module.exports = {
 	name: '<Name of your command>',
 	description: '<Description of your command>',
 	execute(message, args, mentionned_user) {
-    // The actions executed by your command
+    		// The actions executed by your command
 	},
 };
 ```
 You'll have to import the command in the main script. Edit the file "bot.js" and add in the "switch case" these lines:
 ```
-case '<Argument of the command>':
+case '<Prefix of the command>':
   client.commands.get('<Name set in the command file>').execute(message, args, mentionned_user);
 break;
 ```
@@ -84,12 +84,12 @@ Use the [DiscordJS documentation](https://discordjs.guide/) to make your own com
 If you need to add images, please create a subfolder with the name of you command in the "images" folder. To import all the images in your command file, use these lines:
 ```
 fs.readdir('./images/Baka', (err, files) => {
-				const list_img = []
-				files.forEach(file => {
-				  list_img.push(file);
-				});
+	const list_img = []
+	files.forEach(file => {
+		list_img.push(file);
+	});
         // The lines of code where you need the list of images
-			});
+});
 ```
 If you need to select a random image:
 ```
@@ -122,7 +122,18 @@ Heroku and Zeit are mainly made for the web, that's why both will be waiting for
 
 ```now init```
 
-```now --public -e token="YOUR_TOKEN_HERE"```
+4. Create a file named "now.json" with this structure:
+```
+{
+   "build": {
+        "env": {
+            "token": "<Your bot token>"
+        }
+    }
+}
+```
+
+5. Type the following commands:
 
 ```now --prod```
 
