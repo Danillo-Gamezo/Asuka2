@@ -48,7 +48,7 @@ Clone/download the project.
 
 Before running the script, it will need your bot token. Create a file named ".env" and add the following line:
 
-```TOKEN="<Your Token Here>"```
+```token="<Your Token Here>"```
 
 You can now run the script in a terminal with the following command: ```node bot.js```
 
