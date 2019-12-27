@@ -145,7 +145,7 @@ server.listen(3000)
 
 ```now --prod```
 
-```now scale <your-deployment-link>.now.sh sfo1 1``` or Zeit will shut the script if the server don't receive any request in the ~10min.
+```now scale <your-deployment-link>.now.sh sfo1 1``` or Zeit will shut the script if the server don't receive any request in the ~10min. You'll have to type this command every time you'll deploy a new version.
 
 Now your bot should be working.
 If you have a problem with the Zeit CLI, here's the [documentation](https://zeit.co/docs).
