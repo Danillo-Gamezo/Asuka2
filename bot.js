@@ -5,7 +5,7 @@ require('dotenv').config()
 //IF YOU ARE HOSTING ON YOUR MACHINE OR VPS REMOVE THESE LINES
 const {createServer} = require('http')
 const server = createServer(() => {})
-server.listen(3000)
+server.listen(process.env.PORT)
 
 // require the discord.js and fs modules
 const Discord = require('discord.js');
