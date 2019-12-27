@@ -6,7 +6,6 @@
   "author": "Gakamine",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "now -e token=@token --public",
     "start": "node bot.js"
   },
   "dependencies": {

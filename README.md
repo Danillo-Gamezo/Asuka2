@@ -109,7 +109,7 @@ More customization are available on the [Discord developper's dashboard](https:/
 
 ## Host your bot
 You can host the bot on Heroku, Zeit or on a VPS.
-I personnally use Zeit because it's easier to setup but the explanations can be applied for Heroku. Hosting on a VPS will just require you to upload the ".env"  file and start the script in a terminal with the command ```node bot.js```.
+I personnally use Heroku. Hosting on a VPS will just require you to upload the ".env"  file and start the script in a terminal with the command ```node bot.js```.
 Heroku and Zeit are mainly made for the web, that's why both will be waiting for a Web reponse. This line in "bot.js" make the script working on the hosters:
 
 ```
@@ -121,6 +121,8 @@ server.listen(3000)
 **If you are going to host the bot on your own machine or on a VPS, I recommend you to remove these line for security reasons.**
 
 ### For Zeit
+
+**Zeit is not working with this project. I'm trying to figure out why.**
 
 1. Create an account on [Zeit](https://zeit.co/).
 2. You'll need to set environment key on Zeit. I invite you to [download the Zeit CLI](https://zeit.co/download) to do this.
