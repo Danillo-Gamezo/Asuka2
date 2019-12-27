@@ -47,7 +47,7 @@ client.on('message', message => {
 });
 
 // login to Discord with your app's token
-client.login(process.env.TOKEN);
+client.login(process.env.token);
 
 //Function to fetch mentionned user
 function getUserFromMention(mention) {

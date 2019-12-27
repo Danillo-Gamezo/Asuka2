@@ -1,5 +1,5 @@
 {
-	"name": "Asuka-Langley",
+	"name": "asukabot",
 	"version": "0.0.1",
 	"description": "The Asuka bot",
 	"main": "bot.js",
