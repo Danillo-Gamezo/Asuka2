@@ -6,6 +6,7 @@
   "author": "Gakamine",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "now -e token=@token --public",
     "start": "node bot.js"
   },
   "dependencies": {
@@ -15,7 +16,7 @@
     "winston": "^3.2.1"
   },
   "engines": {
-    "node": "8.x",
+    "node": "10.x",
     "npm": "*"
   },
   "devDependencies": {},
