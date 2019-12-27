@@ -1,6 +1,11 @@
 //Adding token from env variables
 require('dotenv').config()
-require('http').createServer().listen(3000)
+
+//Setting listening server on HTTP for Zeit or Heroku hosting
+//IF YOU ARE HOSTING ON YOUR MACHINE OR VPS REMOVE THESE LINES
+const {createServer} = require('http')
+const server = createServer(() => {})
+server.listen(3000)
 
 // require the discord.js and fs modules
 const Discord = require('discord.js');

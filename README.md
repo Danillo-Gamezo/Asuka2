@@ -1,9 +1,13 @@
 # AsukaBot
 AsukaBot is a Discord bot that provide functionnalities and fun for your Discord server.
 
-**If you are going to host the bot on your own machine or on a VPS, I recommend you to remove this line in "bot.js" for security reasons:**
+**If you are going to host the bot on your own machine or on a VPS, I recommend you to remove these lines in "bot.js" for security reasons:**
 
-```require('http').createServer().listen(3000)``` 
+```
+const {createServer} = require('http')
+const server = createServer(() => {})
+server.listen(3000)
+``` 
 
 ![Example](https://i.postimg.cc/hPY25KjN/unknown.png)
 
@@ -108,9 +112,13 @@ You can host the bot on Heroku, Zeit or on a VPS.
 I personnally use Zeit because it's easier to setup but the explanations can be applied for Heroku. Hosting on a VPS will just require you to upload the ".env"  file and start the script in a terminal with the command ```node bot.js```.
 Heroku and Zeit are mainly made for the web, that's why both will be waiting for a Web reponse. This line in "bot.js" make the script working on the hosters:
 
-```require('http').createServer().listen(3000)``` 
+```
+const {createServer} = require('http')
+const server = createServer(() => {})
+server.listen(3000)
+``` 
 
-**If you are going to host the bot on your own machine or on a VPS, I recommend you to remove this line for security reasons.**
+**If you are going to host the bot on your own machine or on a VPS, I recommend you to remove these line for security reasons.**
 
 ### For Zeit
 
