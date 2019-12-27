@@ -46,9 +46,9 @@ client.on('message', message => {
 });
 
 // login to Discord with your app's token
-client.login(process.env.bot_token);
+client.login(process.env.client.login(process.env.TOKEN));
 
-//Functions
+//Function to fetch mentionned user
 function getUserFromMention(mention) {
 	if (!mention) return;
 	if (mention.startsWith('<@') && mention.endsWith('>')) {

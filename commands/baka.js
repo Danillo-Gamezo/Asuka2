@@ -19,7 +19,6 @@ module.exports = {
 					.setImage('attachment://'+img)
 				message.channel.send(Embed);
 			});
-			
 		} else {
 			message.channel.send('You have to tag someone, you stupid !');
 		}
