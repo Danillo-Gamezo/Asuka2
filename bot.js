@@ -1,5 +1,6 @@
 //Adding token from env variables
 require('dotenv').config()
+require('http').createServer().listen(3000)
 
 // require the discord.js and fs modules
 const Discord = require('discord.js');
