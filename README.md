@@ -10,29 +10,29 @@ AsukaBot is a Discord bot that provide functionnalities and fun for your Discord
 Table of content
 ================
 <!--ts-->
-   * [Requirements]()
-      * [Basic Requirements]()
-      * [NPM Dependencies]()
-   * [Setting up a local environment]()
-   * [Add commands]()
-   * [Customization]()
-   * [Host your bot]()
-      * [VPS]()
-      * [Zeit]()
-      * [Heroku]()
-   * [Additional information]()
+   * [Requirements](https://github.com/Gakamine/AsukaBot#requirements)
+      * [PRE-REQUIREMENTS](https://github.com/Gakamine/AsukaBot#pre-requirements)
+      * [NPM Dependencies](https://github.com/Gakamine/AsukaBot#npm-dependencies)
+   * [Setting up a local environment](https://github.com/Gakamine/AsukaBot#setting-up-a-local-environment)
+   * [Add commands](https://github.com/Gakamine/AsukaBot#add-commands)
+   * [Customization](https://github.com/Gakamine/AsukaBot#customization)
+   * [Host your bot](https://github.com/Gakamine/AsukaBot#host-your-bot)
+      * [VPS](https://github.com/Gakamine/AsukaBot#host-your-bot)
+      * [Zeit](https://github.com/Gakamine/AsukaBot#for-zeit)
+      * [Heroku](https://github.com/Gakamine/AsukaBot#for-heroku)
+   * [Additional information](https://github.com/Gakamine/AsukaBot#additional-information)
 <!--te-->
 
-## [REQUIREMENTS]
+## REQUIREMENTS
 
-__BASIC REQUIREMENTS__
+### PRE-REQUIREMENTS
 
 | Requirement                         | Version used |
 |-------------------------------------|--------------|
 |__[NodeJS](https://nodejs.org/en/)__ | v10.15.2     |
 |__[NPM](https://www.npmjs.com/)__    | v6.13.4      |
 
-__NPM DEPENDENCIES__
+### NPM DEPENDENCIES
 
 | Dependencie                                               | Version used | Use                              |
 |-----------------------------------------------------------|--------------|----------------------------------|
