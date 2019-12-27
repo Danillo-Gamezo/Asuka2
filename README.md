@@ -11,7 +11,7 @@ Table of content
 ================
 <!--ts-->
    * [Requirements](https://github.com/Gakamine/AsukaBot#requirements)
-      * [PRE-REQUIREMENTS](https://github.com/Gakamine/AsukaBot#pre-requirements)
+      * [Pre-requirements](https://github.com/Gakamine/AsukaBot#pre-requirements)
       * [NPM Dependencies](https://github.com/Gakamine/AsukaBot#npm-dependencies)
    * [Setting up a local environment](https://github.com/Gakamine/AsukaBot#setting-up-a-local-environment)
    * [Add commands](https://github.com/Gakamine/AsukaBot#add-commands)
