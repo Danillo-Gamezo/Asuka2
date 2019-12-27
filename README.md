@@ -58,7 +58,7 @@ If you want to add your customized command, you will need to create a file in th
 const Discord = require('discord.js');
 module.exports = {
 	name: '<Name of your command>',
-	description: '<Description of you command>',
+	description: '<Description of your command>',
 	execute(message, args, mentionned_user) {
     // The actions executed by your command
 	},
