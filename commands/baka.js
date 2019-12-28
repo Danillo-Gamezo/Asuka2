@@ -11,7 +11,7 @@ module.exports = {
 				files.forEach(file => {
 				  list_img.push(file);
 				});
-				const img = list_img[Math.round(Math.random() * (list_img.length))];
+				const img = list_img[Math.floor(Math.random() * (list_img.length))];
 				const Embed = new Discord.RichEmbed()
 					.setColor('#ff0000')
 					.setDescription('Baka-'+mentionned_user+" !")
