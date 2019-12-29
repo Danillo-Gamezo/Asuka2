@@ -20,7 +20,7 @@ module.exports = {
 				message.channel.send(Embed);
 			});
 		}
-		else if (mentionned_user.id=="605108406398746674") {
+		else if ((mentionned_user.id) && (mentionned_user.id=="605108406398746674")) {
 			message.channel.send('What are you trying to say, baka ?!');
 		}
 		else if (mentionned_user==message.author) {

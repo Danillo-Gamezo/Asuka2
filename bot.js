@@ -59,6 +59,7 @@ client.on('message', message => {
 		const args = message.content.split(' ')
 		var command
 
+		sleep(1000)
 		// We check the length of the arguments to see if the message is something like 
 		//".botprefix command tag" or "%command tag"
 		if (args.length == 2) {
@@ -99,3 +100,12 @@ function getUserFromMention(mention) {
 		return client.users.get(mention);
 	}
 }
+
+//Function to set pause
+function sleep(milliseconds) {
+	const date = Date.now();
+	let currentDate = null;
+	do {
+	  currentDate = Date.now();
+	} while (currentDate - date < milliseconds);
+  }
