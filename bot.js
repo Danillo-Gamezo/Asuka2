@@ -32,23 +32,57 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    // Our bot needs to know if it will execute a command
+
+	// Our bot needs to know if it will execute a command
 	// It will listen for messages that will start with `.asuka`
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
+	if (message.content.startsWith(prefix)) {
+	
+		//Fetching arguments, command used and the mentionned user
+		const args = message.content.slice(prefix.length).split(' ');
+		const command = args.shift().toLowerCase();
+		const mentionned_user = getUserFromMention(args[0]);
 
-	const args = message.content.slice(prefix.length).split(' ');
-	const command = args.shift().toLowerCase();
-	const mentionned_user = getUserFromMention(args[0]);
+		switch(command) {
+			case 'baka':
+				client.commands.get('baka').execute(message, args, mentionned_user);
+			break;
+			// Just add any case commands if you want to..
+			default:
+				message.channel.send("It's not a command. What are you, stupid ?!")
+			break;
+		}
+	}
+	// If the prefix isn't used we do some string analysis
+	// We start to check if someone is tagged and if it's Asuka
+	else if ((message.mentions.users.first()) && (message.mentions.users.first().id=="605108406398746674")){
 
-	switch(command) {
-		case 'baka':
-			client.commands.get('baka').execute(message, args, mentionned_user);
-		break;
-		// Just add any case commands if you want to..
-		default:
-			message.channel.send("It's not a command. What are you, stupid ?!")
-		break;
-	 }
+		const args = message.content.split(' ')
+		var command
+
+		// We check the length of the arguments to see if the message is something like 
+		//".botprefix command tag" or "%command tag"
+		if (args.length == 2) {
+			// We remove all the special characters to get only the command
+			command = args[0].replace(/[^\w\s]/gi, '');
+		}
+		else {
+			command = args[1].toLowerCase();
+		}
+		
+		switch(command) {
+			case 'hug':
+				message.channel.send("What are you doing ? Anta baka !")
+			break;
+			
+			case 'kiss':
+				message.channel.send("BAAAAKAAAAAAAAAA ! THAT'S GROSS ! PERV !")
+			break;
+
+			case 'lick':
+				message.channel.send("..................................................... PERV !")
+			break;
+		}
+	}
 });
 
 // login to Discord with your app's token
