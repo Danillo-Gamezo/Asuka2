@@ -46,6 +46,10 @@ client.on('message', message => {
 			case 'baka':
 				client.commands.get('baka').execute(message, args, mentionned_user);
 			break;
+
+			case 'sad':
+				client.commands.get('sad').execute(message, args, mentionned_user);
+			break;
 			// Just add any case commands if you want to..
 			default:
 				message.channel.send("It's not a command. What are you, stupid ?!")

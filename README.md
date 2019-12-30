@@ -56,6 +56,8 @@ Before running the script, it will need your bot token. Create a file named ".en
 
 You can now run the script in a terminal with the following command: ```node bot.js```
 
+You can add your bot to your server by copying this link in your browser: ```https://discordapp.com/oauth2/authorize?client_id=<Client Id>&scope=bot```. You can find your client ID on the [Discord developper's dashboard](https://discordapp.com/developers/applications) in "General informations".
+
 ## Add commands
 If you want to add your customized command, you will need to create a file in the "commands" directory. Your file will have to contain the following lines:
 ```
