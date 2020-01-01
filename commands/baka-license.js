@@ -42,7 +42,7 @@ module.exports = {
 async function GetBaka(Bakas, message) {
     try {
         isBaka = await Bakas.findOne({ where: { userID: message.author.id } });
-        if( ((Math.random()<0.25) && (isBaka==null)) || isBaka.get('baka')==1 ) {
+        if( ((Math.random()<0.25) && (isBaka==null)) || (isBaka!=null && isBaka.get('baka')==1) ) {
 
             // We add the user as baka in the db
             if(isBaka==null) {
