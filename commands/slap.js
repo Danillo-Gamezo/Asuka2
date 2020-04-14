@@ -14,7 +14,6 @@ module.exports = {
 				const img = list_img[Math.floor(Math.random() * (list_img.length))];
 				const Embed = new Discord.RichEmbed()
 					.setColor('#ff0000')
-					.setDescription('Baka-'+mentionned_user+" !")
 					.attachFiles(['./images/Slap/'+img])
 					.setImage('attachment://'+img)
 				message.channel.send(Embed);
