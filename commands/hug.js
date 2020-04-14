@@ -13,7 +13,7 @@ module.exports = {
 				.attachFiles(['./images/Pathetic.jpeg'])
 				.setImage('attachment://Pathetic.jpeg')
 			message.channel.send(Embed);
-		} else if(message.mentions.users.first()=="605108406398746674") {
+		} else if((message.mentions.users.first()) && (message.mentions.users.first().id=="605108406398746674")) {
 			message.channel.send("Gross...");
 		} else {
 			fs.readdir('./images/Hug', (err, files) => {

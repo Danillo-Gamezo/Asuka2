@@ -51,6 +51,10 @@ client.on('message', message => {
 				client.commands.get('sad').execute(message, args, mentionned_user);
 			break;
 
+			case 'slap':
+				client.commands.get('slap').execute(message, args, mentionned_user);
+			break;
+
 			case 'hug':
 				client.commands.get('hug').execute(message, args, mentionned_user);
 			break;
@@ -93,6 +97,11 @@ client.on('message', message => {
 
 			case 'lick':
 				message.channel.send("..................................................... PERV !")
+			break;
+
+			case 'slap':
+				message.channel.send("HOW DARE YOU SLAPPING ME !")
+				message.channel.send(".asuka slap "+message.author)
 			break;
 		}
 	}
