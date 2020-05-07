@@ -24,50 +24,38 @@ module.exports = {
         });
         Bakas.sync();
 
-        if(message.author.id=="121616589866008579") {
-
-            const Embed = new Discord.RichEmbed()
-                .setColor('#ff0000')
-                .setDescription("You of course are the biggest baka of all.")
-                .attachFiles(['./images/Baka-license/original.png'])
-                .setImage('attachment://original.png')
-            message.channel.send(Embed);
-            
-        } else {
+        // if(message.author.id=="121616589866008579") {
+        //     const Embed = new Discord.RichEmbed()
+        //         .setColor('#ff0000')
+        //         .setDescription("You of course are the biggest baka of all.")
+        //         .attachFiles(['./images/Baka-license/original.png'])
+        //         .setImage('attachment://original.png')
+        //     message.channel.send(Embed);
+        // } else {
             GetBaka(Bakas,message)
-        }
+        // }
 	},
 };
 
 async function GetBaka(Bakas, message) {
-    try {
-        isBaka = await Bakas.findOne({ where: { userID: message.author.id } });
-        if( ((Math.random()<0.25) && (isBaka==null)) || (isBaka!=null && isBaka.get('baka')) ) {
-
-            // We add the user as baka in the db
-            if(isBaka==null) {
-                StoreBaka(Bakas,1,message.author.id);
-            }
-
-            const Embed = new Discord.RichEmbed()
-                .setColor('#ff0000')
-                .setDescription("Here's your baka license.")
-                .attachFiles(['./images/Baka-license/original.png'])
-                .setImage('attachment://original.png')
+    const Embed = new Discord.RichEmbed()
+    .setColor('#ff0000')
+    .setDescription("Here's your baka license.")
+    .attachFiles(['./images/Baka-license/original.png'])
+    .setImage('attachment://original.png')
+    isBaka = await Bakas.findOne({ where: { userID: message.author.id } });
+    if (isBaka && isBaka.get('baka')) {
+        message.channel.send(Embed);
+    } else if (isBaka && !isBaka.get('baka')) {
+        message.channel.send("You have to be a big baka to have a license. Being a baka is not enough !");
+    } else {
+        if(Math.random()<0.25) {
+            StoreBaka(Bakas,1,message.author.id)
             message.channel.send(Embed);
-
         } else {
-
-            // We add the user as non-baka in the db
-            if(isBaka==null) {
-                StoreBaka(Bakas,0,message.author.id);
-            }
-
-            message.channel.send("You have to be a big baka to have a license. Being baka is not enough !");
-
+            StoreBaka(Bakas,0,message.author.id)
+            message.channel.send("You have to be a big baka to have a license. Being a baka is not enough !");
         }
-    } catch(error) {
-        console.log(error);
     }
 }
 
