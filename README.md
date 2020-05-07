@@ -46,13 +46,14 @@ Table of content
 |__[winston](https://www.npmjs.com/package/winston)__       | v3.2.1       | Create event logs                |
 
 ## Setting up a local environment
-Before setting up a local environment, you need to create an application on the [Discord developper's dashboard](https://discordapp.com/developers/applications). Once you have created your application, you'll have to go in the "Bot" menu and get your "Token". Do not share it, it gives a complete access to your bot.
+Before setting up a local environment, you need to create an application on the [Discord developper's dashboard](https://discordapp.com/developers/applications). Once you have created your application, you'll have to go in the "Bot" menu and get your "Token" and "client id". Do not share it, it gives a complete access to your bot.
 
 Clone/download the project.
 
 Before running the script, it will need your bot token. Create a file named ".env" and add the following line:
 
 ```token="<Your Token Here>"```
+```id="<Client id>"```
 
 You can now run the script in a terminal with the following command: ```node bot.js```
 

@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Discord = require('discord.js');
 const fs = require('fs');
 
@@ -5,7 +6,7 @@ module.exports = {
 	name: 'baka',
 	description: 'Reply with Anta Baka',
 	execute(message, args, mentionned_user) {
-		if((mentionned_user) && (mentionned_user.id!=="605108406398746674") && (mentionned_user!=message.author)) {
+		if((mentionned_user) && (mentionned_user.id!==process.env.id) && (mentionned_user!=message.author)) {
 			fs.readdir('./images/Baka', (err, files) => {
 				const list_img = []
 				files.forEach(file => {
@@ -20,7 +21,7 @@ module.exports = {
 				message.channel.send(Embed);
 			});
 		}
-		else if ((message.mentions.users.first()) && (message.mentions.users.first().id=="605108406398746674")) {
+		else if ((message.mentions.users.first()) && (message.mentions.users.first().id==process.env.id)) {
 			message.channel.send('What are you trying to say, baka ?!');
 		}
 		else if (mentionned_user==message.author) {

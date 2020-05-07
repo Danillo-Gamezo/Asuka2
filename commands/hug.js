@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Discord = require('discord.js');
 const Sequelize = require('sequelize');
 const fs = require('fs');
@@ -6,16 +7,7 @@ module.exports = {
 	name: 'hug',
 	description: 'Reply with a hug image',
 	execute(message, args, mentionned_user) {
-
-		if(mentionned_user==message.author) {
-			const Embed = new Discord.RichEmbed()
-				.setColor('#ff0000')
-				.attachFiles(['./images/Pathetic.jpeg'])
-				.setImage('attachment://Pathetic.jpeg')
-			message.channel.send(Embed);
-		} else if((message.mentions.users.first()) && (message.mentions.users.first().id=="605108406398746674")) {
-			message.channel.send("Gross...");
-		} else {
+		if((mentionned_user) && (mentionned_user.id!==process.env.id) && (mentionned_user!=message.author)) {
 			fs.readdir('./images/Hug', (err, files) => {
 				const list_img = []
 				files.forEach(file => {
@@ -29,6 +21,16 @@ module.exports = {
 					.setImage('attachment://'+img)
 				message.channel.send(Embed);
 			});
+		} else if(mentionned_user==message.author) {
+			const Embed = new Discord.RichEmbed()
+				.setColor('#ff0000')
+				.attachFiles(['./images/Pathetic.jpeg'])
+				.setImage('attachment://Pathetic.jpeg')
+			message.channel.send(Embed);
+		} else if((message.mentions.users.first()) && (message.mentions.users.first().id==process.env.id)) {
+			message.channel.send("Gross...");
+		} else {
+			message.channel.send('You have to tag someone, you stupid !');
 		}
 	},
 };
