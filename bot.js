@@ -61,6 +61,10 @@ client.on('message', message => {
 			case 'baka-license':
 				client.commands.get('baka-license').execute(message, args, mentionned_user);
 			break;
+
+			// case 'help':
+			// 	client.commands.get('help').execute(message, args, mentionned_user);
+			// break;
 			// Just add any case commands if you want to..
 			default:
 				message.channel.send("It's not a command. What are you, stupid ?!")
@@ -69,7 +73,7 @@ client.on('message', message => {
 	}
 	// If the prefix isn't used we do some string analysis
 	// We start to check if someone is tagged and if it's Asuka
-	else if ((message.mentions.users.first()) && (message.mentions.users.first().id=="605108406398746674")){
+	else if ((message.mentions.users.first()) && (message.mentions.users.first().id==process.env.id)){
 
 		const args = message.content.split(' ')
 		var command
