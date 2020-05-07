@@ -24,16 +24,16 @@ module.exports = {
         });
         Bakas.sync();
 
-        // if(message.author.id=="121616589866008579") {
-        //     const Embed = new Discord.RichEmbed()
-        //         .setColor('#ff0000')
-        //         .setDescription("You of course are the biggest baka of all.")
-        //         .attachFiles(['./images/Baka-license/original.png'])
-        //         .setImage('attachment://original.png')
-        //     message.channel.send(Embed);
-        // } else {
+        if(message.author.id=="121616589866008579") {
+            const Embed = new Discord.RichEmbed()
+                .setColor('#ff0000')
+                .setDescription("You of course are the biggest baka of all.")
+                .attachFiles(['./images/Baka-license/original.png'])
+                .setImage('attachment://original.png')
+            message.channel.send(Embed);
+        } else {
             GetBaka(Bakas,message)
-        // }
+        }
 	},
 };
 
