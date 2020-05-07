@@ -110,6 +110,9 @@ client.on('message', message => {
 // login to Discord with your app's token
 client.login(process.env.token);
 
+// This will let us know of any API errors encountered
+client.on('error', error => console.log(error))
+
 //Function to fetch mentionned user
 function getUserFromMention(mention) {
 	if (!mention) return;
