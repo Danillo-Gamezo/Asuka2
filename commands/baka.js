@@ -15,7 +15,7 @@ module.exports = {
 				const img = list_img[Math.floor(Math.random() * (list_img.length))];
 				const Embed = new Discord.MessageEmbed()
 					.setColor('#ff0000')
-					.setDescription(`Baka-<@${mentioned_user.username}> !`)
+					.setDescription(`Baka-<@${mentioned_user.id}> !`)
 					.attachFiles(['./images/Baka/'+img])
 					.setImage('attachment://'+img)
 				message.channel.send(Embed);

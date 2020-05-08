@@ -25,7 +25,7 @@ module.exports = {
         Bakas.sync();
 
         if(message.author.id=="121616589866008579") {
-            const Embed = new Discord.RichEmbed()
+            const Embed = new Discord.MessageEmbed()
                 .setColor('#ff0000')
                 .setDescription("You of course are the biggest baka of all.")
                 .attachFiles(['./images/Baka-license/original.png'])
@@ -38,7 +38,7 @@ module.exports = {
 };
 
 async function GetBaka(Bakas, message) {
-    const Embed = new Discord.RichEmbed()
+    const Embed = new Discord.MessageEmbed()
     .setColor('#ff0000')
     .setDescription("Here's your baka license.")
     .attachFiles(['./images/Baka-license/original.png'])
