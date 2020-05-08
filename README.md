@@ -48,7 +48,7 @@ Before running the script, it will need your bot token. Create a file named ".en
 token="<Your Token Here>"
 id="<Client id>"
 ```
-You can additionnaly add a value ```PORT=<The port you want to listen>``` if you use Zeit or Heroku hosting.
+You can additionnally add a value ```PORT=<The port you want to listen>``` if you use Zeit or Heroku hosting.
 
 You can now run the script in a terminal with the following command: ```node bot.js```
 
