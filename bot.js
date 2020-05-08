@@ -37,38 +37,38 @@ client.on('message', message => {
 	// It will listen for messages that will start with `.asuka`
 	if (message.content.startsWith(prefix)) {
 	
-		//Fetching arguments, command used and the mentionned user
+		//Fetching arguments, command used and the mentioned user
 		const args = message.content.slice(prefix.length).split(' ');
 		const command = args.shift().toLowerCase();
-		const mentionned_user = message.mentions.users.first()//getUserFromMention(args[0]);
+		const mentioned_user = message.mentions.users.first()//getUserFromMention(args[0]);
 
 		switch(command) {
 			case 'baka':
-				client.commands.get('baka').execute(message, args, mentionned_user);
+				client.commands.get('baka').execute(message, args, mentioned_user);
 			break;
 
 			case 'sad':
-				client.commands.get('sad').execute(message, args, mentionned_user);
+				client.commands.get('sad').execute(message, args, mentioned_user);
 			break;
 
 			case 'slap':
-				client.commands.get('slap').execute(message, args, mentionned_user);
+				client.commands.get('slap').execute(message, args, mentioned_user);
 			break;
 
 			case 'hug':
-				client.commands.get('hug').execute(message, args, mentionned_user);
+				client.commands.get('hug').execute(message, args, mentioned_user);
 			break;
 
 			case 'baka-license':
-				client.commands.get('baka-license').execute(message, args, mentionned_user);
+				client.commands.get('baka-license').execute(message, args, mentioned_user);
 			break;
 
 			case 'soundboard':
-				client.commands.get('soundboard').execute(message, args, mentionned_user);
+				client.commands.get('soundboard').execute(message, args, mentioned_user);
 			break;
 
 			case 'help':
-				client.commands.get('help').execute(message, args, mentionned_user,client.commands);
+				client.commands.get('help').execute(message, args, mentioned_user,client.commands);
 			break;
 			// Just add any case commands if you want to..
 			default:
@@ -121,7 +121,7 @@ client.login(process.env.token);
 // This will let us know of any API errors encountered
 client.on('error', error => console.log(error))
 
-//Function to fetch mentionned user
+//Function to fetch mentioned user
 // function getUserFromMention(mention) {
 // 	if (!mention) return;
 // 	if (mention.startsWith('<@') && mention.endsWith('>')) {

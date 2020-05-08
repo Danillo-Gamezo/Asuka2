@@ -4,7 +4,7 @@ const fs = require('fs');
 module.exports = {
 	name: 'sad',
 	description: 'Reply with a sad image',
-	execute(message, args, mentionned_user) {
+	execute(message, args, mentioned_user) {
 
         fs.readdir('./images/Sad', (err, files) => {
 			const list_img = []

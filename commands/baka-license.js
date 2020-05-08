@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 module.exports = {
 	name: 'baka-license',
 	description: 'Reply with a baka license if you are baka enough to have one.',
-	execute(message, args, mentionned_user) {
+	execute(message, args, mentioned_user) {
 
         // Connection to the database
         const sequelize = new Sequelize('database', 'user', 'password', {

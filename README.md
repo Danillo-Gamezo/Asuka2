@@ -1,5 +1,5 @@
 # AsukaBot
-AsukaBot is a Discord bot that provide functionnalities and fun for your Discord server.
+AsukaBot is a Discord bot that provide functionalities and fun for your Discord server.
 
 ![Example](https://i.postimg.cc/hPY25KjN/unknown.png)
 
@@ -30,11 +30,11 @@ Table of content
 
 ### NPM DEPENDENCIES
 
-| Dependencie                                                             | Version used | Usage                            |
+| Dependence                                                              | Version used | Usage                            |
 |-------------------------------------------------------------------------|--------------|----------------------------------|
 |__[discord.io](https://www.npmjs.com/package/discord.io)__               | v2.5.3       | Simple functions for Discord API |
 |__[discord.js](https://www.npmjs.com/package/discord.js)__               | v11.5.1      | Simple functions for Discord API |
-|__[dotenv](https://www.npmjs.com/package/dotenv)__                       | v8.2.0       | Setup environnement variables    |
+|__[dotenv](https://www.npmjs.com/package/dotenv)__                       | v8.2.0       | Setup environment variables      |
 |__[winston](https://www.npmjs.com/package/winston)__                     | v3.2.1       | Create event logs                |
 |__[sodium](https://www.npmjs.com/package/sodium)__                       | v3.0.2       | Audio performance                |
 |__[@discordjs/opus](https://www.npmjs.com/package/@discordjs/opus)__     | v0.3.2       | Plays audio                      |
@@ -42,7 +42,7 @@ Table of content
 
 
 ## Setting up a local environment
-Before setting up a local environment, you need to create an application on the [Discord developper's dashboard](https://discordapp.com/developers/applications). Once you have created your application, you'll have to go in the "Bot" menu and get your "Token" and "client id". Do not share it, it gives a complete access to your bot.
+Before setting up a local environment, you need to create an application on the [Discord developer's dashboard](https://discordapp.com/developers/applications). Once you have created your application, you'll have to go in the "Bot" menu and get your "Token" and "client id". Do not share it, it gives complete access to your bot.
 
 Clone/download the project.
 
@@ -52,11 +52,11 @@ Before running the script, it will need your bot token. Create a file named ".en
 token="<Your Token Here>"
 id="<Client id>"
 ```
-You can additionnally add a value ```PORT=<The port you want to listen>``` if you use Zeit or Heroku hosting.
+You can additionally add a value ```PORT=<The port you want to listen>``` if you use Zeit or Heroku hosting.
 
 You can now run the script in a terminal with the following command: ```node bot.js```
 
-You can add your bot to your server by copying this link in your browser: ```https://discordapp.com/oauth2/authorize?client_id=<Client Id>&scope=bot```. You can find your client ID on the [Discord developper's dashboard](https://discordapp.com/developers/applications) in "General informations".
+You can add your bot to your server by copying this link in your browser: ```https://discordapp.com/oauth2/authorize?client_id=<Client Id>&scope=bot```. You can find your client ID on the [Discord developer's dashboard](https://discordapp.com/developers/applications) in "General information".
 
 ## Add commands
 If you want to add your customized command, you will need to create a file in the "commands" directory. Your file will have to contain the following lines:
@@ -65,7 +65,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: '<Name of your command>',
 	description: '<Description of your command>',
-	execute(message, args, mentionned_user) {
+	execute(message, args, mentioned_user) {
     		// The actions executed by your command
 	},
 };
@@ -73,21 +73,21 @@ module.exports = {
 You'll have to import the command in the main script. Edit the file "bot.js" and add in the "switch case" these lines:
 ```
 case '<Prefix of the command>':
-  client.commands.get('<Name set in the command file>').execute(message, args, mentionned_user);
+  client.commands.get('<Name set in the command file>').execute(message, args, mentioned_user);
 break;
 ```
 You can use the commands already added as examples.
-If you need multiple arguments in your command, you can access it in your command file in listing all values stored in the "args" variable. The variable "mentionned_user" will automatically contain user information if a user is tagged. If no one is tagged or there is an invalid tag, the variable will be set as undefined.
+If you need multiple arguments in your command, you can access it in your command file in listing all values stored in the "args" variable. The variable "mentioned_user" will automatically contain user information if a user is tagged. If no one is tagged or there is an invalid tag, the variable will be set as undefined.
 
 __Example:__
 ```
 .asuka <command argument> <argument 0> <argument 1> <tagged user>
 ```
-The information are accessible with "args[0]", "args[1]" and "mentionned_user".
+The information are accessible with "args[0]", "args[1]" and "mentioned_user".
 
-Use the [DiscordJS documentation](https://discordjs.guide/) to make your own command with all the functionnalities offered by DiscordJS.
+Use the [DiscordJS documentation](https://discordjs.guide/) to make your own command with all the functionalities offered by DiscordJS.
 
-If you need to add images, please create a subfolder with the name of you command in the "images" folder. To import all the images in your command file, use these lines:
+If you need to add images, please create a subfolder with the name of your command in the "images" folder. To import all the images in your command file, use these lines:
 ```
 fs.readdir('./images/Baka', (err, files) => {
 	const list_img = []
@@ -107,20 +107,20 @@ If you need more integration from my script or have recommendations to make plea
 ## Customization
 If you want to edit the message prefix that invoke the bot, edit the constant "prefix" in the "bot.js" file.
 If you want to add images for a command, do a Pull Request with your new images in the "images/<command>" folder.
-More customization are available on the [Discord developper's dashboard](https://discordapp.com/developers/applications).
+More customization are available on the [Discord developer's dashboard](https://discordapp.com/developers/applications).
 
 ## Host your bot
 You can host the bot on Heroku, Zeit or on a VPS.
-I personnally use Heroku. Hosting on a VPS will just require you to upload the ".env"  file and start the script in a terminal with the command ```node bot.js```.
-Heroku and Zeit are mainly made for the web, that's why both will be waiting for a Web reponse. This line in "bot.js" make the script working on the hosters:
+I personally use Heroku. Hosting on a VPS will just require you to upload the ".env"  file and start the script in a terminal with the command ```node bot.js```.
+Heroku and Zeit are mainly made for the web, that's why both will be waiting for a Web reponse. This line in "bot.js" make the script working on the hosts:
 
 ```
 const {createServer} = require('http')
 const server = createServer(() => {})
-server.listen(3000)
+server.listen(process.env.PORT)
 ``` 
 
-**If you are going to host the bot on your own machine or on a VPS, I recommend you to remove these line for security reasons.**
+**You have to define a port in the environment file.**
 
 ### For Zeit
 
@@ -149,7 +149,7 @@ server.listen(3000)
 
 ```now --prod```
 
-```now scale <your-deployment-link>.now.sh sfo1 1``` or Zeit will shut the script if the server don't receive any request in the ~10min. You'll have to type this command every time you'll deploy a new version.
+```now scale <your-deployment-link>.now.sh sfo1 1``` or Zeit will shut the script if the server doesn't receive any request in the ~10min. You'll have to type this command every time you'll deploy a new version.
 
 Now your bot should be working.
 If you have a problem with the Zeit CLI, here's the [documentation](https://zeit.co/docs).
@@ -171,11 +171,11 @@ If you have a problem with the Zeit CLI, here's the [documentation](https://zeit
 
 ```git push heroku master```
 
-```heroku ps:scale web=1``` or Heroku will shut the script if the server don't receive any request in the ~10min.
+```heroku ps:scale web=1``` or Heroku will shut the script if the server doesn't receive any request in the ~10min.
 
 Now your bot should be working.
 If you have a problem with the Heroku CLI, here's the [documentation](https://devcenter.heroku.com/articles/heroku-cli).
 
 ## Additional information
-I'd like to thanks all the contributors on this project and the user that will use the bot.
+I'd like to thank all the contributors on this project and the user that will use the bot.
 If you need more details on the documentation, questions or recommendations I'd be glad to help you. Please [open an issue on Github](https://github.com/Gakamine/AsukaBot/issues).

@@ -12,7 +12,7 @@ for (const file of audiofiles) {
 module.exports = {
 	name: 'soundboard',
 	description: 'Play sounds in a voice chat. To list the sounds, you can use the command soundboard list.',
-	execute(message, args, mentionned_user) {
+	execute(message, args, mentioned_user) {
         if(args[0]=="list") {
             embed = new Discord.MessageEmbed()
             .setTitle("Sounds list")

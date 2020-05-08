@@ -6,8 +6,8 @@ const fs = require('fs');
 module.exports = {
 	name: 'hug',
 	description: 'Reply with a hug image. You need to tag someone to use it.',
-	execute(message, args, mentionned_user) {
-		if((mentionned_user) && (mentionned_user.id!==process.env.id) && (mentionned_user!=message.author)) {
+	execute(message, args, mentioned_user) {
+		if((mentioned_user) && (mentioned_user.id!==process.env.id) && (mentioned_user!=message.author)) {
 			fs.readdir('./images/Hug', (err, files) => {
 				const list_img = []
 				files.forEach(file => {
@@ -16,18 +16,18 @@ module.exports = {
 				const img = list_img[Math.floor(Math.random() * (list_img.length))];
 				const Embed = new Discord.MessageEmbed()
 					.setColor('#ff0000')
-					.setDescription(`<@${mentionned_user.id}>, it's not like I love you or anything...`)
+					.setDescription(`<@${mentioned_user.id}>, it's not like I love you or anything...`)
 					.attachFiles(['./images/Hug/'+img])
 					.setImage('attachment://'+img)
 				message.channel.send(Embed);
 			});
-		} else if(mentionned_user==message.author) {
+		} else if(mentioned_user==message.author) {
 			const Embed = new Discord.MessageEmbed()
 				.setColor('#ff0000')
 				.attachFiles(['./images/Pathetic.jpeg'])
 				.setImage('attachment://Pathetic.jpeg')
 			message.channel.send(Embed);
-		} else if(mentionned_user && (mentionned_user.id==process.env.id)) {
+		} else if(mentioned_user && (mentioned_user.id==process.env.id)) {
 			message.channel.send("Gross...");
 		} else {
 			message.channel.send('You have to tag someone, you stupid !');

@@ -5,8 +5,8 @@ const fs = require('fs');
 module.exports = {
 	name: 'slap',
 	description: 'Reply with a slap. You need to tag someone to use it.',
-	execute(message, args, mentionned_user) {
-		if((mentionned_user) && (mentionned_user.id!==process.env.id) && (mentionned_user!=message.author)) {
+	execute(message, args, mentioned_user) {
+		if((mentioned_user) && (mentioned_user.id!==process.env.id) && (mentioned_user!=message.author)) {
 			fs.readdir('./images/Slap', (err, files) => {
 				const list_img = []
 				files.forEach(file => {
@@ -14,17 +14,17 @@ module.exports = {
 				});
 				const img = list_img[Math.floor(Math.random() * (list_img.length))];
 				const Embed = new Discord.MessageEmbed()
-					.setDescription(`<@${mentionned_user.id}> ! BAKAAAAAAAAAAA !`)
+					.setDescription(`<@${mentioned_user.id}> ! BAKAAAAAAAAAAA !`)
 					.setColor('#ff0000')
 					.attachFiles(['./images/Slap/'+img])
 					.setImage('attachment://'+img)
 				message.channel.send(Embed);
 			});
 		}
-		else if (mentionned_user && (mentionned_user.id==process.env.id)) {
+		else if (mentioned_user && (mentioned_user.id==process.env.id)) {
 			message.channel.send('How dare you slapping me ?!');
 		}
-		else if (mentionned_user==message.author) {
+		else if (mentioned_user==message.author) {
 			message.channel.send('...... are you masochist ?');
 		}
 		else {

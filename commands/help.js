@@ -4,7 +4,7 @@ const fs = require('fs');
 module.exports = {
 	name: 'help',
 	description: 'Give commands list',
-	execute(message, args, mentionned_user, commands) {
+	execute(message, args, mentioned_user, commands) {
 		embed = new Discord.MessageEmbed()
 				.setTitle("Commands list")
 				.setColor('#ff0000')
