@@ -14,7 +14,7 @@ module.exports = {
 				});
 				const img = list_img[Math.floor(Math.random() * (list_img.length))];
 				const Embed = new Discord.MessageEmbed()
-					.setDescription(`${mentionned_user.username} ! BAKAAAAAAAAAAA !`)
+					.setDescription(`<@${mentionned_user.id}> ! BAKAAAAAAAAAAA !`)
 					.setColor('#ff0000')
 					.attachFiles(['./images/Slap/'+img])
 					.setImage('attachment://'+img)

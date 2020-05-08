@@ -63,9 +63,9 @@ client.on('message', message => {
 				client.commands.get('baka-license').execute(message, args, mentionned_user);
 			break;
 
-			// case 'soundboard':
-			// 	client.commands.get('soundboard').execute(message, args, mentionned_user);
-			// break;
+			case 'soundboard':
+				client.commands.get('soundboard').execute(message, args, mentionned_user);
+			break;
 
 			case 'help':
 				client.commands.get('help').execute(message, args, mentionned_user,client.commands);

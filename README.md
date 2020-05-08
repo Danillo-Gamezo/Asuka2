@@ -30,12 +30,16 @@ Table of content
 
 ### NPM DEPENDENCIES
 
-| Dependencie                                               | Version used | Use                              |
-|-----------------------------------------------------------|--------------|----------------------------------|
-|__[discord.io](https://www.npmjs.com/package/discord.io)__ | v2.5.3       | Simple functions for Discord API |
-|__[discord.js](https://www.npmjs.com/package/discord.js)__ | v11.5.1      | Simple functions for Discord API |
-|__[dotenv](https://www.npmjs.com/package/dotenv)__         | v8.2.0       | Setup environnement variables    |
-|__[winston](https://www.npmjs.com/package/winston)__       | v3.2.1       | Create event logs                |
+| Dependencie                                                             | Version used | Usage                            |
+|-------------------------------------------------------------------------|--------------|----------------------------------|
+|__[discord.io](https://www.npmjs.com/package/discord.io)__               | v2.5.3       | Simple functions for Discord API |
+|__[discord.js](https://www.npmjs.com/package/discord.js)__               | v11.5.1      | Simple functions for Discord API |
+|__[dotenv](https://www.npmjs.com/package/dotenv)__                       | v8.2.0       | Setup environnement variables    |
+|__[winston](https://www.npmjs.com/package/winston)__                     | v3.2.1       | Create event logs                |
+|__[sodium](https://www.npmjs.com/package/sodium)__                       | v3.0.2       | Audio performance                |
+|__[@discordjs/opus](https://www.npmjs.com/package/@discordjs/opus)__     | v0.3.2       | Plays audio                      |
+|__[discord-ytdl-core](https://www.npmjs.com/package/discord-ytdl-core)__ | v2.0.1       | Read Youtube audio               |
+
 
 ## Setting up a local environment
 Before setting up a local environment, you need to create an application on the [Discord developper's dashboard](https://discordapp.com/developers/applications). Once you have created your application, you'll have to go in the "Bot" menu and get your "Token" and "client id". Do not share it, it gives a complete access to your bot.
