@@ -5,7 +5,7 @@ const fs = require('fs');
 
 module.exports = {
 	name: 'hug',
-	description: 'Reply with a hug image',
+	description: 'Reply with a hug image. You need to tag someone to use it.',
 	execute(message, args, mentionned_user) {
 		if((mentionned_user) && (mentionned_user.id!==process.env.id) && (mentionned_user!=message.author)) {
 			fs.readdir('./images/Hug', (err, files) => {

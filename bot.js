@@ -62,9 +62,9 @@ client.on('message', message => {
 				client.commands.get('baka-license').execute(message, args, mentionned_user);
 			break;
 
-			// case 'help':
-			// 	client.commands.get('help').execute(message, args, mentionned_user);
-			// break;
+			case 'help':
+				client.commands.get('help').execute(message, args, mentionned_user,client.commands);
+			break;
 			// Just add any case commands if you want to..
 			default:
 				message.channel.send("It's not a command. What are you, stupid ?!")

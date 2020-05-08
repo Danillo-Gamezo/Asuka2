@@ -33,8 +33,8 @@ Table of content
 
 | Requirement                         | Version used |
 |-------------------------------------|--------------|
-|__[NodeJS](https://nodejs.org/en/)__ | v10.15.2     |
-|__[NPM](https://www.npmjs.com/)__    | v6.13.4      |
+|__[NodeJS](https://nodejs.org/en/)__ | v12.16.3     |
+|__[NPM](https://www.npmjs.com/)__    | v6.14.4      |
 
 ### NPM DEPENDENCIES
 
