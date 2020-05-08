@@ -13,14 +13,15 @@ module.exports = {
 				  list_img.push(file);
 				});
 				const img = list_img[Math.floor(Math.random() * (list_img.length))];
-				const Embed = new Discord.RichEmbed()
+				const Embed = new Discord.MessageEmbed()
+					.setDescription(`${mentionned_user.username} ! BAKAAAAAAAAAAA !`)
 					.setColor('#ff0000')
 					.attachFiles(['./images/Slap/'+img])
 					.setImage('attachment://'+img)
 				message.channel.send(Embed);
 			});
 		}
-		else if ((message.mentions.users.first()) && (message.mentions.users.first().id==process.env.id)) {
+		else if (mentionned_user && (mentionned_user.id==process.env.id)) {
 			message.channel.send('How dare you slapping me ?!');
 		}
 		else if (mentionned_user==message.author) {

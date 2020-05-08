@@ -40,7 +40,7 @@ client.on('message', message => {
 		//Fetching arguments, command used and the mentionned user
 		const args = message.content.slice(prefix.length).split(' ');
 		const command = args.shift().toLowerCase();
-		const mentionned_user = getUserFromMention(args[0]);
+		const mentionned_user = message.mentions.users.first()//getUserFromMention(args[0]);
 
 		switch(command) {
 			case 'baka':
@@ -62,6 +62,10 @@ client.on('message', message => {
 			case 'baka-license':
 				client.commands.get('baka-license').execute(message, args, mentionned_user);
 			break;
+
+			// case 'soundboard':
+			// 	client.commands.get('soundboard').execute(message, args, mentionned_user);
+			// break;
 
 			case 'help':
 				client.commands.get('help').execute(message, args, mentionned_user,client.commands);
@@ -118,16 +122,16 @@ client.login(process.env.token);
 client.on('error', error => console.log(error))
 
 //Function to fetch mentionned user
-function getUserFromMention(mention) {
-	if (!mention) return;
-	if (mention.startsWith('<@') && mention.endsWith('>')) {
-		mention = mention.slice(2, -1);
-		if (mention.startsWith('!')) {
-			mention = mention.slice(1);
-		}
-		return client.users.get(mention);
-	}
-}
+// function getUserFromMention(mention) {
+// 	if (!mention) return;
+// 	if (mention.startsWith('<@') && mention.endsWith('>')) {
+// 		mention = mention.slice(2, -1);
+// 		if (mention.startsWith('!')) {
+// 			mention = mention.slice(1);
+// 		}
+// 		return client.users.get(mention);
+// 	}
+// }
 
 //Function to set pause
 function sleep(milliseconds) {

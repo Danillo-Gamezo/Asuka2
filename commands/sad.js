@@ -12,7 +12,7 @@ module.exports = {
 			  list_img.push(file);
 			});
 			const img = list_img[Math.floor(Math.random() * (list_img.length))];
-			const Embed = new Discord.RichEmbed()
+			const Embed = new Discord.MessageEmbed()
 				.setColor('#ff0000')
 				.setDescription(message.author+" is sad... :sob:")
 				.attachFiles(['./images/Sad/'+img])
