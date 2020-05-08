@@ -1,14 +1,6 @@
 # AsukaBot
 AsukaBot is a Discord bot that provide functionnalities and fun for your Discord server.
 
-**If you are going to host the bot on your own machine or on a VPS, I recommend you to remove these lines in "bot.js" for security reasons:**
-
-```
-const {createServer} = require('http')
-const server = createServer(() => {})
-server.listen(3000)
-``` 
-
 ![Example](https://i.postimg.cc/hPY25KjN/unknown.png)
 
 Table of content
@@ -56,6 +48,7 @@ Before running the script, it will need your bot token. Create a file named ".en
 token="<Your Token Here>"
 id="<Client id>"
 ```
+You can additionnaly add a value ```PORT=<The port you want to listen>``` if you use Zeit or Heroku hosting.
 
 You can now run the script in a terminal with the following command: ```node bot.js```
 

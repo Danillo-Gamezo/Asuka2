@@ -2,10 +2,11 @@
 require('dotenv').config()
 
 //Setting listening server on HTTP for Zeit or Heroku hosting
-//IF YOU ARE HOSTING ON YOUR MACHINE OR VPS REMOVE THESE LINES
-const {createServer} = require('http')
-const server = createServer(() => {})
-server.listen(process.env.PORT)
+if(process.env.PORT) {
+	const {createServer} = require('http')
+	const server = createServer(() => {})
+	server.listen(process.env.PORT)	
+}
 
 // require the discord.js and fs modules
 const Discord = require('discord.js');
