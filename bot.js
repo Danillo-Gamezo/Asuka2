@@ -109,7 +109,7 @@ client.on('message', message => {
 
 			case 'slap':
 				message.channel.send("HOW DARE YOU SLAPPING ME !")
-				message.channel.send(`.asuka slap <@${mentioned_user.id}>`)
+				message.channel.send(`.asuka slap <@${message.author}>`)
 			break;
 		}
 	}

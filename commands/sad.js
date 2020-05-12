@@ -14,7 +14,7 @@ module.exports = {
 			const img = list_img[Math.floor(Math.random() * (list_img.length))];
 			const Embed = new Discord.MessageEmbed()
 				.setColor('#ff0000')
-				.setDescription(`<@${mentioned_user.id}> is sad... :sob:`)
+				.setDescription(`<@${message.author}> is sad... :sob:`)
 				.attachFiles(['./images/Sad/'+img])
 				.setImage('attachment://'+img)
 			message.channel.send(Embed);
