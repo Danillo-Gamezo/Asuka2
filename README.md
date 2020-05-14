@@ -40,6 +40,7 @@ Table of content
 |__[@discordjs/opus](https://www.npmjs.com/package/@discordjs/opus)__     | v0.3.2       | Plays audio                      |
 |__[discord-ytdl-core](https://www.npmjs.com/package/discord-ytdl-core)__ | v2.0.1       | Read Youtube audio               |
 
+You will also need to install FFMpeg on your OS.
 
 ## Setting up a local environment
 Before setting up a local environment, you need to create an application on the [Discord developer's dashboard](https://discordapp.com/developers/applications). Once you have created your application, you'll have to go in the "Bot" menu and get your "Token" and "client id". Do not share it, it gives complete access to your bot.
