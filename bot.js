@@ -104,7 +104,15 @@ client.on('message', message => {
 			break;
 			
 			case 'kiss':
-				message.channel.send("BAAAAKAAAAAAAAAA ! THAT'S GROSS ! PERV !")
+				if(message.author.id=="121616589866008579") {
+					const Embed = new Discord.MessageEmbed()
+						.setColor('#ff0000')
+						.attachFiles(['./images/Gakamine.gif'])
+						.setImage('attachment://Gakamine.gif')
+					message.channel.send(Embed);
+				} else {
+					message.channel.send("BAAAAKAAAAAAAAAA ! THAT'S GROSS ! PERV !")
+				}
 			break;
 
 			case 'lick':
