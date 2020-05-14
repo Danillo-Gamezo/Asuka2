@@ -87,42 +87,46 @@ client.on('message', message => {
 		const args = message.content.split(' ')
 		var command
 
-		sleep(1000)
+		sleep(3000)
 		// We check the length of the arguments to see if the message is something like 
 		//".botprefix command tag" or "%command tag"
 		if (args.length == 2) {
 			// We remove all the special characters to get only the command
 			command = args[0].replace(/[^\w\s]/gi, '');
 		}
-		else {
+		else if(args.length > 2) {
 			command = args[1].toLowerCase();
+		} else {
+			command = null
 		}
 		
-		switch(command) {
-			case 'hug':
-				message.channel.send("What are you doing ? Anta baka !")
-			break;
-			
-			case 'kiss':
-				if(message.author.id=="121616589866008579") {
-					const Embed = new Discord.MessageEmbed()
-						.setColor('#ff0000')
-						.attachFiles(['./images/Gakamine.gif'])
-						.setImage('attachment://Gakamine.gif')
-					message.channel.send(Embed);
-				} else {
-					message.channel.send("BAAAAKAAAAAAAAAA ! THAT'S GROSS ! PERV !")
-				}
-			break;
+		if (message.channel.lastMessage.author.bot) {
+			switch(command) {
+				case 'hug':
+					message.channel.send("What are you doing ? Anta baka !")
+				break;
+				
+				case 'kiss':
+					if(message.author.id=="121616589866008579") {
+						const Embed = new Discord.MessageEmbed()
+							.setColor('#ff0000')
+							.attachFiles(['./images/Gakamine.gif'])
+							.setImage('attachment://Gakamine.gif')
+						message.channel.send(Embed);
+					} else {
+						message.channel.send("BAAAAKAAAAAAAAAA ! THAT'S GROSS ! PERV !")
+					}
+				break;
 
-			case 'lick':
-				message.channel.send("..................................................... PERV !")
-			break;
+				case 'lick':
+					message.channel.send("..................................................... PERV !")
+				break;
 
-			case 'slap':
-				message.channel.send("HOW DARE YOU SLAPPING ME !")
-				message.channel.send(`.asuka slap ${message.author}`)
-			break;
+				case 'slap':
+					message.channel.send("HOW DARE YOU SLAPPING ME !")
+					message.channel.send(`.asuka slap ${message.author}`)
+				break;
+			}
 		}
 	}
 });
@@ -132,18 +136,6 @@ client.login(process.env.token);
 
 // This will let us know of any API errors encountered
 client.on('error', error => console.log(error))
-
-//Function to fetch mentioned user
-// function getUserFromMention(mention) {
-// 	if (!mention) return;
-// 	if (mention.startsWith('<@') && mention.endsWith('>')) {
-// 		mention = mention.slice(2, -1);
-// 		if (mention.startsWith('!')) {
-// 			mention = mention.slice(1);
-// 		}
-// 		return client.users.get(mention);
-// 	}
-// }
 
 //Function to set pause
 function sleep(milliseconds) {
