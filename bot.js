@@ -67,6 +67,10 @@ client.on('message', message => {
 				client.commands.get('soundboard').execute(message, args, mentioned_user);
 			break;
 
+			case 'kiss':
+				client.commands.get('kiss').execute(message, args, mentioned_user);
+			break;
+
 			case 'help':
 				client.commands.get('help').execute(message, args, mentioned_user,client.commands);
 			break;
