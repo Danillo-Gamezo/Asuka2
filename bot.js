@@ -86,24 +86,23 @@ client.on('message', message => {
 
 		const args = message.content.split(' ');
 		var command;
+		if (args.length == 2) {
+			// We remove all the special characters to get only the command
+			command = args[0].replace(/[^\w\s]/gi, '');
+		}
+		else if(args.length > 2) {
+			command = args[1].toLowerCase();
+		} else {
+			command = null;
+		}
 
 		message.channel.awaitMessages(response => response.author.bot === true, {
 			max: 1,
 			time: 3000,
 			errors: ['time'],
-		  })  .then((collected) => {
+		  }).then((collected) => {
 			// We check the length of the arguments to see if the message is something like 
 			//".botprefix command tag" or "%command tag"
-			if (args.length == 2) {
-				// We remove all the special characters to get only the command
-				command = args[0].replace(/[^\w\s]/gi, '');
-			}
-			else if(args.length > 2) {
-				command = args[1].toLowerCase();
-			} else {
-				command = null;
-			}
-		
 			switch(command) {
 				case 'hug':
 					if(message.author.id=="121616589866008579") {
@@ -137,10 +136,18 @@ client.on('message', message => {
 					message.channel.send("HOW DARE YOU SLAPPING ME !");
 					message.channel.send(`.asuka slap ${message.author}`);
 				break;
+
+				default:
+					message.channel.send("What are you doing ? Anta baka !");
+				break
 			}
 		  })
 		  .catch(() => {
-			message.channel.send("You can't fool me, baka !");
+			if(['hug','kiss','slap','lick'].includes(command)) {
+				message.channel.send("You can't fool me, baka !");
+			} else {
+				message.channel.send("Don't tag me, idiot !");
+			}
 		  });
 	}
 });
