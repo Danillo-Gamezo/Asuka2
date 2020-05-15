@@ -106,7 +106,15 @@ client.on('message', message => {
 		
 			switch(command) {
 				case 'hug':
-					message.channel.send("What are you doing ? Anta baka !");
+					if(message.author.id=="121616589866008579") {
+						const Embed = new Discord.MessageEmbed()
+							.setColor('#ff0000')
+							.attachFiles(['./images/Gakamine.gif'])
+							.setImage('attachment://Gakamine.gif');
+						message.channel.send(Embed);
+					} else {
+						message.channel.send("What are you doing ? Anta baka !");
+					}
 				break;
 				
 				case 'kiss':
