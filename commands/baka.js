@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const Discord = require('discord.js');
 const fs = require('fs');
 
@@ -17,7 +17,7 @@ module.exports = {
 					.setColor('#ff0000')
 					.setDescription(`Baka-<@${mentioned_user.id}> !`)
 					.attachFiles(['./images/Baka/'+img])
-					.setImage('attachment://'+img)
+					.setImage('attachment://'+img);
 				message.channel.send(Embed);
 			});
 		}

@@ -16,7 +16,7 @@ module.exports = {
 				.setColor('#ff0000')
 				.setDescription(`${message.author} is sad... :sob:`)
 				.attachFiles(['./images/Sad/'+img])
-				.setImage('attachment://'+img)
+				.setImage('attachment://'+img);
 			message.channel.send(Embed);
 		});
 	},

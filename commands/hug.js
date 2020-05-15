@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const Discord = require('discord.js');
 const Sequelize = require('sequelize');
 const fs = require('fs');
@@ -18,14 +18,14 @@ module.exports = {
 					.setColor('#ff0000')
 					.setDescription(`<@${mentioned_user.id}>, it's not like I love you or anything...`)
 					.attachFiles(['./images/Hug/'+img])
-					.setImage('attachment://'+img)
+					.setImage('attachment://'+img);
 				message.channel.send(Embed);
 			});
 		} else if(mentioned_user==message.author) {
 			const Embed = new Discord.MessageEmbed()
 				.setColor('#ff0000')
 				.attachFiles(['./images/Pathetic.jpeg'])
-				.setImage('attachment://Pathetic.jpeg')
+				.setImage('attachment://Pathetic.jpeg');
 			message.channel.send(Embed);
 		} else if(mentioned_user && (mentioned_user.id==process.env.id)) {
 			message.channel.send("Gross...");

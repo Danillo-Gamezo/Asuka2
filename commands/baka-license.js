@@ -29,20 +29,20 @@ module.exports = {
                 .setColor('#ff0000')
                 .setDescription("You of course are the biggest baka of all.")
                 .attachFiles(['./images/Baka-license/original.png'])
-                .setImage('attachment://original.png')
+                .setImage('attachment://original.png');
             message.channel.send(Embed);
         } else {
-            GetBaka(Bakas,message)
+            GetBaka(Bakas,message);
         }
 	},
 };
 
 async function GetBaka(Bakas, message) {
     const Embed = new Discord.MessageEmbed()
-    .setColor('#ff0000')
-    .setDescription("Here's your baka license.")
-    .attachFiles(['./images/Baka-license/original.png'])
-    .setImage('attachment://original.png')
+        .setColor('#ff0000')
+        .setDescription("Here's your baka license.")
+        .attachFiles(['./images/Baka-license/original.png'])
+        .setImage('attachment://original.png');
     isBaka = await Bakas.findOne({ where: { userID: message.author.id } });
     if (isBaka && isBaka.get('baka')) {
         message.channel.send(Embed);
@@ -50,10 +50,10 @@ async function GetBaka(Bakas, message) {
         message.channel.send("You have to be a big baka to have a license. Being a baka is not enough !");
     } else {
         if(Math.random()<0.25) {
-            StoreBaka(Bakas,1,message.author.id)
+            StoreBaka(Bakas,1,message.author.id);
             message.channel.send(Embed);
         } else {
-            StoreBaka(Bakas,0,message.author.id)
+            StoreBaka(Bakas,0,message.author.id);
             message.channel.send("You have to be a big baka to have a license. Being a baka is not enough !");
         }
     }

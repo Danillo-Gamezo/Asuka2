@@ -3,10 +3,10 @@ const fs = require('fs');
 const ytdl = require("discord-ytdl-core");
 
 const audiofiles = fs.readdirSync('./sounds').filter(file => file.endsWith('.js'));
-const audios = []
+const audios = [];
 for (const file of audiofiles) {
     const audio = require(`../sounds/${file}`);
-    audios.push(audio)
+    audios.push(audio);
 }
 
 module.exports = {
@@ -17,14 +17,14 @@ module.exports = {
             embed = new Discord.MessageEmbed()
             .setTitle("Sounds list")
             .setDescription("Use the command soundboard followed by the sound name.")
-            .setColor('#ff0000')
+            .setColor('#ff0000');
             for(audio_file of audios) {
                 embed.addFields({name: `Title: ${audio_file.name}`, value: `Command: ${audio_file.command}`});
             }
             message.channel.send(embed)
         }
         else if (audios.find( ({ command }) => command === args[0] )) {
-            sound = audios.find( ({ command }) => command === args[0] )
+            sound = audios.find( ({ command }) => command === args[0] );
 
             if (!message.member.voice.channel) return message.channel.send("You have to be in a voice channel baka !");
             let stream = ytdl(sound.url, {
@@ -46,9 +46,9 @@ module.exports = {
             });
 
         } else if (args[0]==null){
-            message.channel.send("You have to enter a sound name, baka !")
+            message.channel.send("You have to enter a sound name, baka !");
         } else {
-            message.channel.send("That's not a sound name, baka !")
+            message.channel.send("That's not a sound name, baka !");
         }
 	},
 };

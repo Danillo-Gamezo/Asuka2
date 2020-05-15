@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const Discord = require('discord.js');
 const fs = require('fs');
 
@@ -8,7 +8,7 @@ module.exports = {
 	execute(message, args, mentioned_user) {
 		if((mentioned_user) && (mentioned_user.id!==process.env.id) && (mentioned_user!=message.author)) {
 			fs.readdir('./images/Slap', (err, files) => {
-				const list_img = []
+				const list_img = [];
 				files.forEach(file => {
 				  list_img.push(file);
 				});
@@ -17,7 +17,7 @@ module.exports = {
 					.setDescription(`<@${mentioned_user.id}> ! BAKAAAAAAAAAAA !`)
 					.setColor('#ff0000')
 					.attachFiles(['./images/Slap/'+img])
-					.setImage('attachment://'+img)
+					.setImage('attachment://'+img);
 				message.channel.send(Embed);
 			});
 		}

@@ -1,11 +1,11 @@
 //Adding token from env variables
-require('dotenv').config()
+require('dotenv').config();
 
 //Setting listening server on HTTP for Zeit or Heroku hosting
 if(process.env.PORT) {
-	const {createServer} = require('http')
-	const server = createServer(() => {})
-	server.listen(process.env.PORT)	
+	const {createServer} = require('http');
+	const server = createServer(() => {});
+	server.listen(process.env.PORT);
 }
 
 // require the discord.js and fs modules
@@ -76,7 +76,7 @@ client.on('message', message => {
 			break;
 			// Just add any case commands if you want to..
 			default:
-				message.channel.send("It's not a command. What are you, stupid ?!")
+				message.channel.send("It's not a command. What are you, stupid ?!");
 			break;
 		}
 	}
@@ -84,26 +84,29 @@ client.on('message', message => {
 	// We start to check if someone is tagged and if it's Asuka
 	else if ((message.mentions.users.first()) && (message.mentions.users.first().id==process.env.id)){
 
-		const args = message.content.split(' ')
-		var command
+		const args = message.content.split(' ');
+		var command;
 
-		sleep(3000)
-		// We check the length of the arguments to see if the message is something like 
-		//".botprefix command tag" or "%command tag"
-		if (args.length == 2) {
-			// We remove all the special characters to get only the command
-			command = args[0].replace(/[^\w\s]/gi, '');
-		}
-		else if(args.length > 2) {
-			command = args[1].toLowerCase();
-		} else {
-			command = null
-		}
+		message.channel.awaitMessages(response => response.author.bot === true, {
+			max: 1,
+			time: 3000,
+			errors: ['time'],
+		  })  .then((collected) => {
+			// We check the length of the arguments to see if the message is something like 
+			//".botprefix command tag" or "%command tag"
+			if (args.length == 2) {
+				// We remove all the special characters to get only the command
+				command = args[0].replace(/[^\w\s]/gi, '');
+			}
+			else if(args.length > 2) {
+				command = args[1].toLowerCase();
+			} else {
+				command = null;
+			}
 		
-		if (message.channel.lastMessage.author.bot) {
 			switch(command) {
 				case 'hug':
-					message.channel.send("What are you doing ? Anta baka !")
+					message.channel.send("What are you doing ? Anta baka !");
 				break;
 				
 				case 'kiss':
@@ -111,23 +114,26 @@ client.on('message', message => {
 						const Embed = new Discord.MessageEmbed()
 							.setColor('#ff0000')
 							.attachFiles(['./images/Gakamine.gif'])
-							.setImage('attachment://Gakamine.gif')
+							.setImage('attachment://Gakamine.gif');
 						message.channel.send(Embed);
 					} else {
-						message.channel.send("BAAAAKAAAAAAAAAA ! THAT'S GROSS ! PERV !")
+						message.channel.send("BAAAAKAAAAAAAAAA ! THAT'S GROSS ! PERV !");
 					}
 				break;
 
 				case 'lick':
-					message.channel.send("..................................................... PERV !")
+					message.channel.send("..................................................... PERV !");
 				break;
 
 				case 'slap':
-					message.channel.send("HOW DARE YOU SLAPPING ME !")
-					message.channel.send(`.asuka slap ${message.author}`)
+					message.channel.send("HOW DARE YOU SLAPPING ME !");
+					message.channel.send(`.asuka slap ${message.author}`);
 				break;
 			}
-		}
+		  })
+		  .catch(() => {
+			message.channel.send("You can't fool me, baka !");
+		  });
 	}
 });
 
@@ -135,7 +141,7 @@ client.on('message', message => {
 client.login(process.env.token);
 
 // This will let us know of any API errors encountered
-client.on('error', error => console.log(error))
+client.on('error', error => console.log(error));
 
 //Function to set pause
 function sleep(milliseconds) {
@@ -144,4 +150,4 @@ function sleep(milliseconds) {
 	do {
 	  currentDate = Date.now();
 	} while (currentDate - date < milliseconds);
-  }
+}

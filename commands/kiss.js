@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const Discord = require('discord.js');
 const fs = require('fs');
 
@@ -17,7 +17,7 @@ module.exports = {
 					.setColor('#ff0000')
 					.setDescription(`Don't think I love you, I just have been asked to do it <@${mentioned_user.id}> !`)
 					.attachFiles(['./images/Kiss/'+img])
-					.setImage('attachment://'+img)
+					.setImage('attachment://'+img);
 				message.channel.send(Embed);
 			});
 		}
@@ -28,7 +28,7 @@ module.exports = {
 			const Embed = new Discord.MessageEmbed()
 				.setColor('#ff0000')
 				.attachFiles(['./images/Pathetic.jpeg'])
-				.setImage('attachment://Pathetic.jpeg')
+				.setImage('attachment://Pathetic.jpeg');
 			message.channel.send(Embed);
 		}
 		else {
