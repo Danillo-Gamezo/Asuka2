@@ -55,7 +55,10 @@ id="<Client id>"
 ```
 You can additionally add a value ```PORT=<The port you want to listen>``` if you use Zeit or Heroku hosting.
 
-You can now run the script in a terminal with the following command: ```node bot.js```
+If you host the bot on your own, you will probably have to install these dependencies ```sudo apt-get install autoconf automake g++ libtool``` and [Libsodium](https://doc.libsodium.org/).
+
+You can now run the script in a terminal with the following command: ```node bot.js```.
+Check [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/#) to run it in the background.
 
 You can add your bot to your server by copying this link in your browser: ```https://discordapp.com/oauth2/authorize?client_id=<Client Id>&scope=bot```. You can find your client ID on the [Discord developer's dashboard](https://discordapp.com/developers/applications) in "General information".
 
